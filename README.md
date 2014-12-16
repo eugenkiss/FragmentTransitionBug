@@ -1,5 +1,5 @@
-The app is the basic activity with embedded fragment template from android studio
-with two differences. First, the `PlaceholderFragment f` is added to to the back
+The app is the basic activity with embedded fragment template from Android Studio
+with two differences. First, the PlaceholderFragment `f` is added to to the back
 stack and, second, an enter transition is set for `f`. Running the app and clicking
 the back button leads to the following error message:
 
