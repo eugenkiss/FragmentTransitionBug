@@ -10,19 +10,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-// Click the back button to produce an exception
 public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container, new Fragment())
+                .addToBackStack("dummy")
+                .commit();
         PlaceholderFragment f;
         f = new PlaceholderFragment();
-        // If the following line is commented out no exception happens
         f.setEnterTransition(new Slide(Gravity.RIGHT));
+        f.setReturnTransition(new Slide(Gravity.RIGHT));
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.container, f)
+                .replace(R.id.container, f)
                 .addToBackStack(null)
                 .commit();
     }
